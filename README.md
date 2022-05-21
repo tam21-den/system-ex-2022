@@ -2,15 +2,22 @@
 
 演習用
 
-### mjpg-streamerをインストールする
+## Raspberry pi zero(bullseye)にmjpg-streamerをインストールする
 
-基本は[このページ](https://raspi-katsuyou.com/index.php/2020/06/30/11/10/44/644/)を基準にする.
+### mjpg-streamer
 
-昨年の演習で使ってたページ.
+  [GitHubリポジトリ](https://github.com/jacksonliam/mjpg-streamer)
+  
+  映像の入力プラグインを出力プラグインに流すためのアプリケーション.Raspberry piのカメラモジュールから流れるストリームを
+  Htmlなどに流すことで,スマホなどから映像を見ることができる.
 
-ただし,今回使うRaspberry piはzeroで,OSバージョンも違うので少し変更する.
+  インストールは基本は[このページ](https://raspi-katsuyou.com/index.php/2020/06/30/11/10/44/644/)を基準にする.
 
-#### ネームサーバを追加する
+  昨年の演習で使ってたページ.
+  
+  ただし,今回使うRaspberry piはzeroで,OSバージョンも違うので少し変更する.
+
+### ネームサーバを追加する
   IP固定しているとaptがこけるので,強制的に特定のネームサーバを向かせる.
 
   ```
@@ -26,7 +33,7 @@
   
   を追記する.
   
-  #### パッケージをインストールする
+### パッケージをインストールする
   
   1.  ```
       sudo apt update
@@ -62,13 +69,10 @@
 
       ```
       make
-      ```
-
-      ```
       sudo make install
       ```
       
- #### スクリプトを作成する
+### スクリプトを作成する
   mjpg-streamerの起動スクリプトはstart.shを参照.
 
   mjpg-streamer/mjpg-streamer-experimentalにstart.shをコピーして使う.
@@ -76,7 +80,7 @@
   入力ストリームについて,参考ページではinput_raspicam.soを入力として取っていたが,そのストリームが無かったのでinput_uvc.soを入力として扱う.
   Raspberry Pi OS bullseye特有の現象かもしれないので要調査
   
-#### ストリーミングを起動する
+### ストリーミングを起動する
   mjpg-streamer/mjpg-streamer-experimentalで,
   
   ```
