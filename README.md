@@ -81,7 +81,7 @@
   Raspberry Pi OS bullseye特有の現象かもしれないので要調査
   
 ### ストリーミングを起動する
-  mjpg-streamer/mjpg-streamer-experimentalで,
+  mjpg-streamer/mjpg-streamer-experimentalで
   
   ```
   sudo sh start.sh
